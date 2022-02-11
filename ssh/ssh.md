@@ -6,7 +6,7 @@
 |-------------|----------------|-------------------------------------|
 | 2022/02/11  | Steinbergs     | Initial creation                    |
 
-# Cited Sources
+## Cited Sources
 * [Get started with OpenSSH](https://github.com/MicrosoftDocs/windowsserverdocs/blob/main/WindowsServerDocs/administration/OpenSSH/OpenSSH_Install_FirstUse.md)
 * [Engineering VPN: PaloAlto GlobalConnect](https://kb.wisc.edu/cae/page.php?id=84859)
 
