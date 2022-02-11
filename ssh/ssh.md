@@ -37,26 +37,11 @@ Online        : True
 RestartNeeded : False
 ```
 
-5. Start the sshd service by running `Start-Service sshd`.
+5. You can now initailize a connection to the Ubuntu Linux machine by running `ssh yourCAEusername@sel-ws01.me.wisc.edu` in PowerShell while connected to a valid GlobalProtect portal.
 
-6. Run `Set-Service -Name sshd -StartupType 'Automatic'`.
+6. Following this initial call you will be asked if you are sure you want to connect. Run `yes` to add the server to the list of known SSH hosts on your Windows client.
 
-7. Verify the Firewall rule is configured by running the follwoing:
-
-```
-if (!(Get-NetFirewallRule -Name "OpenSSH-Server-In-TCP" -ErrorAction SilentlyContinue | Select-Object Name, Enabled)) {
-    Write-Output "Firewall Rule 'OpenSSH-Server-In-TCP' does not exist, creating it..."
-    New-NetFirewallRule -Name 'OpenSSH-Server-In-TCP' -DisplayName 'OpenSSH Server (sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
-} else {
-    Write-Output "Firewall rule 'OpenSSH-Server-In-TCP' has been created and exists."
-}
-```
-
-8. You can now initailize a connection to the Ubuntu Linux machine by running `ssh yourCAEusername@sel-ws01.me.wisc.edu` in PowerShell while connected to a valid GlobalProtect portal.
-
-9. Following this initial call you will be asked if you are sure you want to connect. Run `yes` to add the server to the list of known SSH hosts on your Windows client.
-
-10. Finally, you are prompted to enter you CAE password (NOTE: the entry is hidden as a security precaution). The output should be the following:
+7. Finally, you are prompted to enter you CAE password (NOTE: the entry is hidden as a security precaution). The output should be the following:
 
 ```
 yourCAEusername@sel-ws01:~$
