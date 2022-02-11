@@ -6,6 +6,10 @@
 |-------------|----------------|-------------------------------------|
 | 2022/02/13  | Wagner         | Initial creation                    |
 
+# Cited Sources
+* [Get started with OpenSSH](https://github.com/MicrosoftDocs/windowsserverdocs/blob/main/WindowsServerDocs/administration/OpenSSH/OpenSSH_Install_FirstUse.md)
+* [Engineering VPN: PaloAlto GlobalConnect](https://kb.wisc.edu/cae/page.php?id=84859)
+
 
 ## Operating System(s) and requirements
 * These instructions are based on Secure Shell connection for a Windows 10, 64-bit operating system. 
@@ -18,4 +22,42 @@ Setup up a local machine for to run a Secure Shell connection (terminal only) to
 
 ## Procedure
 
-1. 
+1. Run PowerShell as an Administrator.
+
+2. Run the cmdlet `Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'` to check if OpenSSH is already isntalled.
+
+3. The output should show `State : NotPresent` if the OpenSSH client is not already installed.
+
+4. Run `Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0`, the output should show:
+
+```
+Path          :
+Online        : True
+RestartNeeded : False
+```
+
+5. Start the sshd service by running `Start-Service sshd`.
+
+6. Run `Set-Service -Name sshd -StartupType 'Automatic'`.
+
+7. Verify the Firewall rule is configured by running the follwoing:
+
+```
+if (!(Get-NetFirewallRule -Name "OpenSSH-Server-In-TCP" -ErrorAction SilentlyContinue | Select-Object Name, Enabled)) {
+    Write-Output "Firewall Rule 'OpenSSH-Server-In-TCP' does not exist, creating it..."
+    New-NetFirewallRule -Name 'OpenSSH-Server-In-TCP' -DisplayName 'OpenSSH Server (sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
+} else {
+    Write-Output "Firewall rule 'OpenSSH-Server-In-TCP' has been created and exists."
+}
+```
+
+8. You can now initailize a connection to the Ubuntu Linux machine by running `ssh yourCAEusername@sel-ws01.me.wisc.edu` in PowerShell while connected to a valid GlobalProtect portal.
+
+9. Following this instial call you will be promted asking if you are sure you want to connect. Run `yes` to add the server to the list of known SSH hosts on your Windows client.
+
+10. Finally, you are prompted to enter you CAE password (NOTE: the entry is hidden as a security precaution). The output should be the following:
+
+```
+yourCAEusername@sel-ws01:~$
+```
+
