@@ -4,7 +4,7 @@
 
 | Last update | Author         | Notes or changes                    |
 |-------------|----------------|-------------------------------------|
-| 2022/02/13  | Wagner         | Initial creation                    |
+| 2022/02/11  | Steinbergs     | Initial creation                    |
 
 # Cited Sources
 * [Get started with OpenSSH](https://github.com/MicrosoftDocs/windowsserverdocs/blob/main/WindowsServerDocs/administration/OpenSSH/OpenSSH_Install_FirstUse.md)
