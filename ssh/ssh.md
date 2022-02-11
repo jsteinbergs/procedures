@@ -19,7 +19,7 @@
     ![](./portal_address.PNG)
 
 ## Purpose
-Setup up a local machine for to run a Secure Shell connection (terminal only) to the ERB 1338 Ubuntu Linux machine.
+Setup up a local machine to run a Secure Shell connection (terminal only) to the ERB 1338 Ubuntu Linux machine.
 
 ## Procedure
 
