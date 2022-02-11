@@ -54,7 +54,7 @@ if (!(Get-NetFirewallRule -Name "OpenSSH-Server-In-TCP" -ErrorAction SilentlyCon
 
 8. You can now initailize a connection to the Ubuntu Linux machine by running `ssh yourCAEusername@sel-ws01.me.wisc.edu` in PowerShell while connected to a valid GlobalProtect portal.
 
-9. Following this instial call you will be promted asking if you are sure you want to connect. Run `yes` to add the server to the list of known SSH hosts on your Windows client.
+9. Following this initial call you will be promted asking if you are sure you want to connect. Run `yes` to add the server to the list of known SSH hosts on your Windows client.
 
 10. Finally, you are prompted to enter you CAE password (NOTE: the entry is hidden as a security precaution). The output should be the following:
 
