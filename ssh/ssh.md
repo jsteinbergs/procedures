@@ -37,7 +37,7 @@ Online        : True
 RestartNeeded : False
 ```
 
-5. You can now initailize a connection to the Ubuntu Linux machine by running `ssh yourCAEusername@sel-ws01.me.wisc.edu` in PowerShell while connected to a valid GlobalProtect portal.
+5. You can now connect to the Ubuntu Linux machine by running `ssh yourCAEusername@sel-ws01.me.wisc.edu` in PowerShell while connected to a valid GlobalProtect portal.
 
 6. Following this initial call you will be asked if you are sure you want to connect. Run `yes` to add the server to the list of known SSH hosts on your Windows client.
 
