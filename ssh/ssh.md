@@ -29,7 +29,7 @@ Setup up a local machine for to run a Secure Shell connection (terminal only) to
 
 3. The output should show `State : NotPresent` if the OpenSSH client is not already installed.
 
-4. Run `Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0`, the output should show:
+4. Run `Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0` to install the OpenSSH client, the output should show:
 
 ```
 Path          :
