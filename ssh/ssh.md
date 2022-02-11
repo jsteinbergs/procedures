@@ -13,8 +13,8 @@
 
 ## Operating System(s) and requirements
 * These instructions are based on Secure Shell connection for a Windows 10, 64-bit operating system. 
-* This procedure assumes prior installation of [PaloAlto Global Connect VPN](https://kb.wisc.edu/cae/page.php?id=84859)
-* Please note that the Graduate Students/Staff portal addresses are the only valid options for this procedure (undergradutes must request access)
+* This procedure assumes prior installation of [PaloAlto Global Connect VPN](https://kb.wisc.edu/cae/page.php?id=84859).
+* Please note that the Graduate Students/Staff portal addresses are the only valid options for this procedure (undergradutes must request access).
     
     ![](./portal_address.PNG)
 
